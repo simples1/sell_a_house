@@ -2,9 +2,15 @@ require 'rails_helper'
 
 describe 'navigate' do
   describe 'homepage' do
-    it 'can be reached successfully' do
+
+    before do
+	    @user =  FactoryBot.create(:user) 
+	    login_as(@user, :scope => :user)
+  	end
+
+    it 'can be reached homepage successfully when logged in' do
       visit root_path
-      expect(page.status_code).to eq(200)
+      expect(page).to have_content("Welcome")
     end
   end
 end
