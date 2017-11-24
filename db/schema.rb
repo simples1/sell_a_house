@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171122195315) do
     t.string   "house_type"
     t.integer  "rooms"
     t.float    "price"
+    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

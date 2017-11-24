@@ -4,6 +4,7 @@ class CreateHouses < ActiveRecord::Migration
       t.string :house_type
       t.integer :rooms
       t.float :price
+      t.string :image
 
       t.timestamps null: false
     end

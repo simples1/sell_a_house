@@ -15,11 +15,10 @@ describe "Post a house for sell" do
 	end
 
 	it "will post a house" do
-		# attach_file('Image', File.absolute_path('/app/assets/images/house1.jpg'))
-
-
 		visit(new_houses_path())
+
 		select('Apartment', :from => 'house[house_type]')
+		attach_file('Image',  File.join(Rails.root, "/app/assets/images/house1.jpg"))
 		fill_in "house[rooms]", with: 3
 		fill_in "house[price]", with: 100000
 		click_button('Submit House')
