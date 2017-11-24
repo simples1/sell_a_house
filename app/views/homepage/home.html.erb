@@ -1,3 +1,26 @@
-<h1>This is my homepage</h1>
+<div class="container">
+  <div class="row">
+    <h1>Sell a House...Then Bounce</h1>	
+
+    <div id="houses">
+      <% @houses.each do |house| %>
+        <div class="col-md-4" style="border:1px solid">
+          <table>
+            <tr>
+              <td>
+                <div><%= house.house_type %></div>
+                <div><%= image_tag(house.image.url) %></div>
+                <div><%= house.rooms %></div>
+                <div><%= house.price %></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      <% end %>			
+    </div>
+  </div>
+</div>
+
 
 <%= link_to "Sell", new_houses_path(), id: "sell_a_house" %>
+
